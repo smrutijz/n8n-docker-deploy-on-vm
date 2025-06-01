@@ -1,0 +1,11 @@
+.env
+.env.*
+/tmp/
+/node_modules/
+/dist/
+/*.log
+*.swp
+*.swo
+.DS_Store
+.idea/
+.vscode/
