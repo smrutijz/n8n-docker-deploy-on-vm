@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 # Update system
@@ -10,6 +9,16 @@ sudo apt install -y apt-transport-https ca-certificates curl software-properties
 
 # Install Nginx
 sudo apt install -y nginx
+
+# Install Certbot for SSL
+sudo apt install -y certbot python3-certbot-nginx
+
+# Check if .env exists
+if [ ! -f .env ]; then
+  cp .env.example .env
+  echo ".env file created. Please edit it with your credentials before running this script again."
+  exit 0
+fi
 
 # Install Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -23,24 +32,16 @@ sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-
   -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-# Install Certbot for SSL
-sudo apt install -y certbot python3-certbot-nginx
-
-# Check if .env exists
-if [ ! -f .env ]; then
-  cp .env.example .env
-  echo ".env file created. Please edit it with your credentials before running this script again."
-  exit 0
-fi
-
 # Substitute NGINX domain variable and deploy config
-export $(grep N8N_HOST_DOMAIN .env | xargs)
+export $(grep -E 'N8N_HOST|N8N_PORT' .env | xargs)
 envsubst < ./nginx/n8n.conf > /tmp/n8n.conf
-sudo cp /tmp/n8n.conf /etc/nginx/sites-available/n8n
-sudo ln -sf /etc/nginx/sites-available/n8n /etc/nginx/sites-enabled/
+sudo cp /tmp/n8n.conf /etc/nginx/sites-available/n8n.conf
+sudo ln -sf /etc/nginx/sites-available/n8n.conf /etc/nginx/sites-enabled/
 
 # Test and reload Nginx
+sudo nginx -t
 sudo systemctl reload nginx
 
 # Start n8n
 sudo docker-compose up -d
+# ...existing code...
