@@ -1,9 +1,19 @@
-# Deploy a Free n8n Instance on Google Cloud
+# Deploy a Free n8n Instance on Google Cloud & Supabase
+
+---
+
+## Get Your Free Supabase Instance (for postgresql)
+
+- Sign up for a free Supabase account and create a new project: [Supabase Free Tier Pricing](https://supabase.com/pricing)
+- Use the database credentials from your Supabase project in your `.env` file.
+
+---
+
+## 1. Create a Free Tier VM
 
 > **Note:** Google Cloud Free Tier VM types, quotas, and features might change in the future. Always follow the latest official guidelines here:  
 > [Google Cloud Free Tier Features](https://cloud.google.com/free/docs/free-cloud-features)
 
-## 1. Create a Free Tier VM
 
 - Go to the [Google Cloud Console](https://console.cloud.google.com/).
 - Navigate to **Compute Engine → VM Instances → Create Instance**.
@@ -42,14 +52,18 @@
 
 ## 5. Deploy n8n
 
+Open SSH from GCP "Compute Engine" instance, and follw the steps:
+
 1. **Install Git (if not already installed):**
    ```bash
    sudo apt update
    sudo apt install git -y
+   sudo apt install nano -y
    ```
 
 2. **Clone this repo and enter the directory:**
    ```bash
+   rm -rf n8n-docker-deploy-on-vm
    git clone <your-repo-url>
    cd n8n-docker-deploy-on-vm
    ```
@@ -77,7 +91,6 @@
 
 6. **Access n8n at:** [https://<your-domain>](https://<your-domain>)
 
----
 
 ## Notes
 

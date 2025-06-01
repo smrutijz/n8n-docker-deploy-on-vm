@@ -26,10 +26,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Install Certbot for SSL
 sudo apt install -y certbot python3-certbot-nginx
 
-# Copy .env.example if .env doesn't exist
+# Check if .env exists
 if [ ! -f .env ]; then
   cp .env.example .env
-  echo ".env file created. Please edit it with your credentials before running Docker Compose."
+  echo ".env file created. Please edit it with your credentials before running this script again."
   exit 0
 fi
 
@@ -38,7 +38,14 @@ export $(grep N8N_HOST_DOMAIN .env | xargs)
 envsubst < ./nginx/n8n.conf > /tmp/n8n.conf
 sudo cp /tmp/n8n.conf /etc/nginx/sites-available/n8n
 sudo ln -sf /etc/nginx/sites-available/n8n /etc/nginx/sites-enabled/
-sudo nginx -t && sudo systemctl reload nginx
+
+# Test and reload Nginx
+sudo nginx -t
+if [ $? -ne 0 ]; then
+  echo "Nginx configuration test failed. Please check your nginx/n8n.conf."
+  exit 1
+fi
+sudo systemctl reload nginx
 
 # Start n8n
 sudo docker-compose up -d
