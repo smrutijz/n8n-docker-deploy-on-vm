@@ -42,26 +42,40 @@
 
 ## 5. Deploy n8n
 
-1. **Clone this repo and enter the directory:**
+1. **Install Git (if not already installed):**
+   ```bash
+   sudo apt update
+   sudo apt install git -y
+   ```
+
+2. **Clone this repo and enter the directory:**
    ```bash
    git clone <your-repo-url>
    cd n8n-docker-deploy-on-vm
    ```
 
-2. **Upload your `.env` file** with all required variables to the project directory.
+3. **How to Edit `.env` in Your VM**
+  
+   The setup script will automatically create a `.env` file from `.env.example` if it does not exist.
 
-3. **Run the setup script:**
+   Edit the `.env` or ``.env.example`` file with your credentials:
+
+   ```bash
+   nano .env.example
+   ```
+
+4. **Run the setup script:**
    ```bash
    chmod +x scripts/setup.sh
    ./scripts/setup.sh
    ```
 
-4. **Obtain SSL certificate:**
+5. **Obtain SSL certificate:**
    ```bash
    sudo certbot --nginx -d <your-domain>
    ```
 
-5. **Access n8n at:** [https://<your-domain>](https://<your-domain>)
+6. **Access n8n at:** [https://<your-domain>](https://<your-domain>)
 
 ---
 
