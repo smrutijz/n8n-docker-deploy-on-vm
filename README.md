@@ -64,7 +64,12 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
 2. **Clone this repo and enter the directory:**
    ```bash
    rm -rf n8n-docker-deploy-on-vm
-   git clone <your-repo-url>
+
+   if [ ! -d "n8n-docker-deploy-on-vm" ]; then
+   git clone <your-repo-url> n8n-docker-deploy-on-vm
+   # git clone https://github.com/smrutijz/n8n-docker-deploy-on-vm.git > n8n-docker-deploy-on-vm
+   fi
+
    cd n8n-docker-deploy-on-vm
    ```
 
@@ -87,6 +92,7 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
 5. **Obtain SSL certificate:**
    ```bash
    sudo certbot --nginx -d <your-domain>
+   # sudo certbot --nginx -d n8n.smrutiaisolution.fun
    ```
 
 6. **Access n8n at:** [https://<your-domain>](https://<your-domain>)

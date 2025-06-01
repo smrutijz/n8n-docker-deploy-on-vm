@@ -40,19 +40,7 @@ sudo cp /tmp/n8n.conf /etc/nginx/sites-available/n8n
 sudo ln -sf /etc/nginx/sites-available/n8n /etc/nginx/sites-enabled/
 
 # Test and reload Nginx
-sudo nginx -t
-if [ $? -ne 0 ]; then
-  echo "Nginx configuration test failed. Please check your nginx/n8n.conf."
-  exit 1
-fi
 sudo systemctl reload nginx
 
 # Start n8n
 sudo docker-compose up -d
-
-echo ""
-echo "n8n and Nginx are running."
-echo "Now obtain your SSL certificate by running:"
-echo "  sudo certbot --nginx -d $N8N_HOST_DOMAIN"
-echo ""
-echo "After SSL, access your instance at: https://$N8N_HOST_DOMAIN"

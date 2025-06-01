@@ -19,6 +19,7 @@ services:
       - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
       - N8N_HOST=${N8N_HOST}
       - N8N_PROTOCOL=https
+      - N8N_PORT=443
       - WEBHOOK_TUNNEL_URL=https://${N8N_HOST}/
       - WEBHOOK_URL=https://${N8N_HOST}/
     volumes:
