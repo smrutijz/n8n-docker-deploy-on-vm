@@ -33,7 +33,7 @@ sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 # Substitute NGINX domain variable and deploy config
-export $(grep -E 'N8N_HOST|N8N_PORT' .env | xargs)
+export $(grep -E 'N8N_HOST' .env | xargs)
 envsubst < ./nginx/n8n.conf > /tmp/n8n.conf
 sudo cp /tmp/n8n.conf /etc/nginx/sites-available/n8n.conf
 sudo ln -sf /etc/nginx/sites-available/n8n.conf /etc/nginx/sites-enabled/
