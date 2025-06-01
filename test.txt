@@ -8,15 +8,20 @@ services:
     ports:
       - "5678:5678"
     environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=${N8N_SB_PG_HOST}
+      - DB_POSTGRESDB_PORT=${N8N_SB_PG_PORT}
+      - DB_POSTGRESDB_DATABASE=${N8N_SB_PG_DB}
+      - DB_POSTGRESDB_USER=${N8N_SB_PG_USER}
+      - DB_POSTGRESDB_PASSWORD=${N8N_SB_PG_PASSWORD}
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
       - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
-      - N8N_PROTOCOL=${N8N_PROTOCOL}
       - N8N_HOST=${N8N_HOST}
-      - N8N_PORT=${N8N_PORT}
+      - N8N_PROTOCOL=https
       - N8N_SECURE_COOKIE=true
-      - WEBHOOK_TUNNEL_URL=${N8N_PROTOCOL}://${N8N_HOST}/
-      - WEBHOOK_URL=${N8N_PROTOCOL}://${N8N_HOST}/
+      - WEBHOOK_TUNNEL_URL=https://${N8N_HOST}/
+      - WEBHOOK_URL=https://${N8N_HOST}/
     volumes:
       - n8n_data:/home/node/.n8n
 
