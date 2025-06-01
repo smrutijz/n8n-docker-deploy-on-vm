@@ -68,6 +68,7 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
    fi
 
    cd n8n-docker-deploy-on-vm
+   git pull
    ```
 
 3. **How to Edit `.env` in Your VM**
