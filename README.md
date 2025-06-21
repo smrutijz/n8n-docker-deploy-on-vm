@@ -69,8 +69,8 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
 
 3. **Run the setup script:**
    ```bash
-   chmod +x script/setup.sh
-   sudo ./script/setup.sh <your-domain-name> <your-email-id>
+   chmod +x setup.sh
+   sudo ./setup.sh <your-domain-name> <your-email-id>
    ```
 
 
