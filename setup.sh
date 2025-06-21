@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────
 # n8n “One-Shot” Installer for Google Cloud free-tier VMs
-# v2.2.1 – 2025-05-09 (SSE/WebSocket keep-alive + wait-until-ready)
+# v2.2.1 – 2025-06-21 (SSE/WebSocket keep-alive + wait-until-ready)
 #
 # Usage (inside the VM)
 #   curl -SSL <RAW_URL_OF_THIS_FILE> | sudo bash -s "your-domain.com" "admin@domain.com"
