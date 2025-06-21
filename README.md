@@ -1,15 +1,10 @@
 # Deploy a Free n8n Instance on Google Cloud & Supabase
+Deploy a Free n8n Instance on Google Cloud & Supabase
+This project provides a one-shot installer to deploy n8n — a powerful open-source workflow automation tool — on a free-tier Google Cloud VM with HTTPS support via Let's Encrypt. It's ideal for individuals or small teams looking to self-host n8n at zero cost using Google Cloud’s generous free compute offering. The setup script installs Docker, Nginx, and n8n, configures reverse proxying, and automatically provisions SSL certificates.
 
 ---
 
-## 1. Get Your Free Supabase Instance (for postgresql)
-
-- Sign up for a free Supabase account and create a new project: [Supabase Free Tier Pricing](https://supabase.com/pricing)
-- Use the database credentials from your Supabase project in your `.env` file.
-
----
-
-## 2. Create a Free Tier VM
+## 1. Create a Free Tier VM
 
 > **Note:** Google Cloud Free Tier VM types, quotas, and features might change in the future. Always follow the latest official guidelines here:  
 > [Google Cloud Free Tier Features](https://cloud.google.com/free/docs/free-cloud-features)
@@ -27,7 +22,7 @@
 
 ---
 
-## 3. Reserve a Static External IP (optional)
+## 2. Reserve a Static External IP (optional)
 
 - After your VM is ready, go to **VPC Network → External IP addresses**.
 - Click "Reserve" next to your VM to assign a static IP.
@@ -35,14 +30,14 @@
 
 ---
 
-## 4. Update Your DNS
+## 3. Update Your DNS
 
 - Go to your domain provider's dashboard.
 - Add an **A record** pointing your subdomain (e.g., `n8n.yourdomain.com`) to your VM's external static IP.
 
 ---
 
-## 5. Open Firewall Ports for n8n
+## 4. Open Firewall Ports for n8n
 
 - In Google Cloud Console, go to **VPC Network → Firewall**.
 - Add a rule to allow **TCP connections from 0.0.0.0/0** (all IPs) for ports **5678** (n8n default), and **5687, 5689** if needed.
@@ -50,7 +45,7 @@
 
 ---
 
-## 6. Deploy n8n
+## 5. Deploy n8n
 
 Open SSH from GCP "Compute Engine" instance, and follw the steps:
 
