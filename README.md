@@ -80,4 +80,4 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
 
 For any questions or support, please contact **Smruti** at [smrutijz@hotmail.com](mailto:smrutijz@hotmail.com).
 
-Connect with me on [LinkedIn](https://www.linkedin.com/in/smrutijz/).
+Connect with me on [LinkedIn](https://www.linkedin.com/in/smruti-satpathy-15b0a039/).
