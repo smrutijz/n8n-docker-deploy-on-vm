@@ -18,7 +18,7 @@
 - Go to the [Google Cloud Console](https://console.cloud.google.com/).
 - Navigate to **Compute Engine → VM Instances → Create Instance**.
 - Select the **"E2-micro"** machine type (this is included in the Google Cloud Free Tier).
-- Choose **Ubuntu 20.04 LTS** as the OS.
+- Choose **Ubuntu (stable version)** as the OS.
 - **Before creating the VM, enable these firewall options:**
   - **HTTP traffic:** Allows web traffic to your server (port 80).
   - **HTTPS traffic:** Allows secure web traffic (port 443).
@@ -27,7 +27,7 @@
 
 ---
 
-## 3. Reserve a Static External IP
+## 3. Reserve a Static External IP (optional)
 
 - After your VM is ready, go to **VPC Network → External IP addresses**.
 - Click "Reserve" next to your VM to assign a static IP.
@@ -78,11 +78,11 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
    sudo ./script/setup.sh <your-domain-name> <your-email-id>
    ```
 
-6. **Access n8n at:** Your domain [https://n8n.smrutiaisolution.fun](https://n8n.smrutiaisolution.fun)
 
+## Copyright
 
-## Notes
+© 2025 Smruti Ranjan Satpathy. All rights reserved.
 
-Please contact **Smruti Ranjan Satpathy** at [smrutijz@hotmail.com](mailto:smrutijz@hotmail.com) for any questions or support.
+For any questions or support, please contact **Smruti** at [smrutijz@hotmail.com](mailto:smrutijz@hotmail.com).
 
 Connect with me on [LinkedIn](https://www.linkedin.com/in/smrutijz/).
