@@ -56,9 +56,10 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
 
 1. **Install Git (if not already installed):**
    ```bash
+   sudo su
    sudo apt update
-   sudo apt install git -y
    sudo apt install nano -y
+   sudo apt install git -y
    ```
 
 2. **Clone this repo and enter the directory:**
@@ -71,26 +72,10 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
    git pull
    ```
 
-3. **How to Edit `.env` in Your VM**
-  
-   The setup script will automatically create a `.env` file from `.env.example` if it does not exist.
-
-   Edit the `.env` or ``.env.example`` file with your credentials:
-
+3. **Run the setup script:**
    ```bash
-   nano .env.example
-   ```
-
-4. **Run the setup script:**
-   ```bash
-   chmod +x scripts/setup.sh
-   ./scripts/setup.sh
-   ```
-
-5. **Obtain SSL certificate:**
-   ```bash
-   sudo certbot --nginx -d <your-domain>
-   # sudo certbot --nginx -d n8n.smrutiaisolution.fun
+   chmod +x script/setup.sh
+   sudo ./script/setup.sh <your-domain-name> <your-email-id>
    ```
 
 6. **Access n8n at:** Your domain [https://n8n.smrutiaisolution.fun](https://n8n.smrutiaisolution.fun)
@@ -98,5 +83,6 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
 
 ## Notes
 
-- Change all passwords and secrets before deploying to production.
-- For troubleshooting, check Docker and Nginx logs.
+Please contact **Smruti Ranjan Satpathy** at [smrutijz@hotmail.com](mailto:smrutijz@hotmail.com) for any questions or support.
+
+Connect with me on [LinkedIn](https://www.linkedin.com/in/smrutijz/).
