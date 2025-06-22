@@ -37,7 +37,7 @@ This project provides a one-shot installer to deploy n8n — a powerful open-sou
 ## 3. Update Your DNS
 
 - Go to your domain provider's dashboard.
-- Add an **A record** pointing your subdomain (e.g., `n8n.yourdomain.com`) to your VM's external static IP.
+- Add an **A record** pointing your subdomain (e.g., `n8n.yourdomain.com`) to your VM's external IP.
 
 ---
 
@@ -55,10 +55,7 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
 
 1. **Install Git (if not already installed):**
    ```bash
-   sudo su
-   sudo apt update
-   sudo apt install nano -y
-   sudo apt install git -y
+   sudo apt update && sudo apt install git -y
    ```
 
 2. **Clone this repo and enter the directory:**
