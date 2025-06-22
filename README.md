@@ -86,3 +86,7 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 For any questions or support, please contact **Smruti** at [smrutijz@hotmail.com](mailto:smrutijz@hotmail.com).
 
 Connect with me on [LinkedIn](https://www.linkedin.com/in/smrutijz/).
+
+You can also chat with my AI bot, **SmrutiRBot**, on Telegram! Simply scan the QR code below to get started:
+
+[![SmrutiRBot](img/smruti-r-bot-telegram-qr-code.png)](https://t.me/SmrutiRBot)
