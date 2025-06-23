@@ -73,7 +73,7 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
 - Second arg should be your email-id
    ```bash
    chmod +x setup.sh
-   sudo ./setup.sh "<your-domain-name>" "<your-email-id>"
+   sudo ./setup.sh <your-domain-name> <your-email-id>
    ```
 
 
