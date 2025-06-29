@@ -1,10 +1,8 @@
 # Deploy a Free n8n Instance on Google Cloud
 
-![n8n Architecture](img/architecture.png)
+This project provides a one-shot installer to deploy n8n — a powerful open-source workflow automation tool — on a free-tier Google Cloud VM with HTTPS support via Let's Encrypt. It's ideal for individuals or small teams looking to self-host n8n at zero cost using Google Cloud’s generous free compute offering. The setup script installs Docker, Nginx, Certbot, and n8n (with optional sqlite-default, and powerful postgraes), configures reverse proxying, and automatically provisions SSL certificates.
 
-This project provides a one-shot installer to deploy n8n — a powerful open-source workflow automation tool — on a free-tier Google Cloud VM with HTTPS support via Let's Encrypt. It's ideal for individuals or small teams looking to self-host n8n at zero cost using Google Cloud’s generous free compute offering. The setup script installs Docker, Nginx, and n8n, configures reverse proxying, and automatically provisions SSL certificates.
-
-**⚠️Note:** This setup uses local storage only (no PostgreSQL). It is not production-ready and is recommended only for small, personal workflows.
+**⚠️Note:** It is not production-ready and is recommended only for small, personal workflows.
 
 ---
 
