@@ -3,7 +3,7 @@ set -euo pipefail
 
 DOMAIN=${1:? "n8n FQDN (e.g., n8n.example.com)"}
 EMAIL=${2:? "Email for Let's Encrypt"}
-DB_HOST=${3:-""}         # e.g., Supabase host or empty for SQLite
+DB_HOST=${3:-""}
 DB_PORT=${4:-"5432"}
 DB_DATABASE=${5:-"postgres"}
 DB_USER=${6:-""}
