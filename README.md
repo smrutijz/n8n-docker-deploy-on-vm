@@ -69,22 +69,28 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
    ```
 
 3. **Run the setup script:**
-Option 1 (with default SQLite)
+
+A. Option 1 (with default SQLite)
 - First arg should be your domain-name (FQDN)
 - Second arg should be your email-id
    ```bash
    chmod +x ./setup-n8n-w-sqlite.sh
    sudo ./setup-n8n-w-sqlite.sh '<your-domain-name>' '<your-email-id>'
    ```
-Option 2 (with PostGreSQL)
+B. Option 2 (with PostGreSQL)
 - First arg should be your domain-name (FQDN)
 - Second arg should be your email-id
+- Third arg PostgreSQL host name
+- Forth arg PostgreSQL port number (usually 5432)
+- Fifth PostgreSQL database name (usually postgres)
+- Sixth PostgreSQL user name
+- Sevent PostgreSQL user password
    ```bash
    chmod +x ./setup-n8n-w-postgresql.sh
    sudo bash setup-n8n-w-postgresql.sh \
   '<your-domain-name>' \
   '<your-email-id>' \
-  '<your-postgres-host>' \
+  '<your-postgres-host-name>' \
   '<your-postgres-port>' \
   '<your-postgres-db-name>' \
   '<your-postgres-username>' \
