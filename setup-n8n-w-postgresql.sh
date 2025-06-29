@@ -3,11 +3,11 @@ set -euo pipefail
 
 DOMAIN=${1:? "n8n FQDN (e.g., n8n.example.com)"}
 EMAIL=${2:? "Email for Let's Encrypt"}
-DB_HOST=${3:-""}
-DB_PORT=${4:-"5432"}
-DB_DATABASE=${5:-"postgres"}
-DB_USER=${6:-""}
-DB_PASS=${7:-""}
+DB_HOST=${3:-"postgres host"}
+DB_PORT=${4:-"postgres db name - 5432 usually"}
+DB_DATABASE=${5:-"postgres db name - postgres usually"}
+DB_USER=${6:-"postgres user"}
+DB_PASS=${7:-"postgres password"}
 
 echo "📦 Installing Docker, Nginx & Certbot..."
 apt-get update -y
