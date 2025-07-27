@@ -96,6 +96,95 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
    ```
 
 
+---
+
+## 6. Update or Re-deploy n8n (Docker)
+
+To update your n8n Docker container or clean up old images:
+
+1. **Pull the latest n8n image:**
+   ```bash
+   sudo docker pull n8nio/n8n:latest
+   sudo docker images
+   sudo docker ps -a
+   ```
+
+2. **Stop and remove the existing container:**
+   ```bash
+   sudo docker stop <CONTAINER_ID>
+   sudo docker rm <CONTAINER_ID>
+   ```
+
+3. **Run the updated container (PostgreSQL example):**
+   ```bash
+   sudo docker run -d \
+     --name n8n --restart unless-stopped \
+     -p 5678:5678 \
+     -v /var/n8n:/home/node/.n8n \
+     -e N8N_HOST=<DOMAIN> \
+     -e WEBHOOK_URL="https://<DOMAIN>/" \
+     -e WEBHOOK_TUNNEL_URL="https://<DOMAIN>/" \
+     -e DB_TYPE=postgresdb \
+     -e DB_POSTGRESDB_HOST=<DB_HOST> \
+     -e DB_POSTGRESDB_PORT=<DB_PORT> \
+     -e DB_POSTGRESDB_DATABASE=<DB_DATABASE> \
+     -e DB_POSTGRESDB_USER=<DB_USER> \
+     -e DB_POSTGRESDB_PASSWORD=<DB_PASS> \
+     -e DB_POSTGRESDB_SSLMODE=require \
+     -e DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED=false \
+     n8nio/n8n:latest
+   ```
+
+4. **Clean up unused containers and images:**
+   ```bash
+   sudo docker ps -a
+   sudo docker images
+   sudo docker rm <UNUSED-CONTAINER-ID>
+   sudo docker rmi <UNUSED-IMAGE-ID>
+   ```
+
+Replace placeholders (e.g., `<CONTAINER_ID>`, `<DOMAIN>`, `<DB_HOST>`, etc.) with your actual values.
+
+---
+
+## Example: Run n8n Docker Container Directly
+
+If you want to run the n8n Docker container manually (without the setup script), use one of the following commands:
+
+**For SQLite (default, recommended for simple setups):**
+```bash
+sudo docker run -d \
+  --name n8n --restart unless-stopped \
+  -p 5678:5678 \
+  -v /var/n8n:/home/node/.n8n \
+  -e N8N_HOST=<DOMAIN> \
+  -e WEBHOOK_URL="https://<DOMAIN>/" \
+  -e WEBHOOK_TUNNEL_URL="https://<DOMAIN>/" \
+  n8nio/n8n:latest
+```
+
+**For PostgreSQL (advanced, for production or team use):**
+```bash
+sudo docker run -d \
+  --name n8n --restart unless-stopped \
+  -p 5678:5678 \
+  -v /var/n8n:/home/node/.n8n \
+  -e N8N_HOST=<DOMAIN> \
+  -e WEBHOOK_URL="https://<DOMAIN>/" \
+  -e WEBHOOK_TUNNEL_URL="https://<DOMAIN>/" \
+  -e DB_TYPE=postgresdb \
+  -e DB_POSTGRESDB_HOST=<DB_HOST> \
+  -e DB_POSTGRESDB_PORT=<DB_PORT> \
+  -e DB_POSTGRESDB_DATABASE=<DB_DATABASE> \
+  -e DB_POSTGRESDB_USER=<DB_USER> \
+  -e DB_POSTGRESDB_PASSWORD=<DB_PASS> \
+  -e DB_POSTGRESDB_SSLMODE=require \
+  -e DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED=false \
+  n8nio/n8n:latest
+```
+
+Replace placeholders (e.g., `<DOMAIN>`, `<DB_HOST>`, etc.) with your actual values.
+
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
