@@ -156,7 +156,6 @@ Replace placeholders (e.g., `<DOMAIN>`, `<DB_HOST>`, etc.) with your actual valu
    ```bash
    sudo docker ps -a
    sudo docker images
-   sudo docker rm <UNUSED-CONTAINER-ID>
    sudo docker rmi <UNUSED-IMAGE-ID>
    ```
 
