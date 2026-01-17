@@ -54,6 +54,8 @@ Open SSH from GCP "Compute Engine" instance, and follw the steps:
 1. **Install Git (if not already installed):**
    ```bash
    sudo apt update && sudo apt install git -y
+   sudo apt-get update && sudo apt-get install -y nano
+
    ```
 
 2. **Clone this repo and enter the directory:**
