@@ -127,6 +127,9 @@ sudo docker run -d \
   -e N8N_HOST=<DOMAIN> \
   -e WEBHOOK_URL="https://<DOMAIN>/" \
   -e WEBHOOK_TUNNEL_URL="https://<DOMAIN>/" \
+  -e N8N_RUNNERS_ENABLED=true \
+  -e N8N_RUNNERS_MODE=internal \
+  -e N8N_RUNNERS_TASK_REQUEST_TIMEOUT=120 \
   n8nio/n8n:latest
 ```
 
@@ -139,6 +142,9 @@ sudo docker run -d \
   -e N8N_HOST=<DOMAIN> \
   -e WEBHOOK_URL="https://<DOMAIN>/" \
   -e WEBHOOK_TUNNEL_URL="https://<DOMAIN>/" \
+  -e N8N_RUNNERS_ENABLED=true \
+  -e N8N_RUNNERS_MODE=internal \
+  -e N8N_RUNNERS_TASK_REQUEST_TIMEOUT=120 \
   -e DB_TYPE=postgresdb \
   -e DB_POSTGRESDB_HOST=<DB_HOST> \
   -e DB_POSTGRESDB_PORT=<DB_PORT> \

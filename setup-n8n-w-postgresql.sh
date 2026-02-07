@@ -82,7 +82,10 @@ DOCKER_CMD=(docker run -d \
   -v /var/n8n:/home/node/.n8n \
   -e N8N_HOST="${DOMAIN}" \
   -e WEBHOOK_URL="https://${DOMAIN}/" \
-  -e WEBHOOK_TUNNEL_URL="https://${DOMAIN}/")
+  -e WEBHOOK_TUNNEL_URL="https://${DOMAIN}/"\
+  -e N8N_RUNNERS_ENABLED=true \
+  -e N8N_RUNNERS_MODE=internal \
+  -e N8N_RUNNERS_TASK_REQUEST_TIMEOUT=120)
 
 # Add PostgreSQL env if DB_HOST is provided
 if [ -n "${DB_HOST}" ]; then

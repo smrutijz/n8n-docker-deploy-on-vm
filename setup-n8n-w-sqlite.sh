@@ -29,6 +29,9 @@ docker run -d --restart unless-stopped --name n8n -p 5678:5678 \
   -e N8N_HOST="$DOMAIN" \
   -e WEBHOOK_URL="https://$DOMAIN/" \
   -e WEBHOOK_TUNNEL_URL="https://$DOMAIN/" \
+  -e N8N_RUNNERS_ENABLED=true \
+  -e N8N_RUNNERS_MODE=internal \
+  -e N8N_RUNNERS_TASK_REQUEST_TIMEOUT=120 \
   -v /var/n8n:/home/node/.n8n \
   n8nio/n8n:latest
 
