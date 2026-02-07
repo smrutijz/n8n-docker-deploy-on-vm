@@ -85,7 +85,8 @@ DOCKER_CMD=(docker run -d \
   -e WEBHOOK_TUNNEL_URL="https://${DOMAIN}/"\
   -e N8N_RUNNERS_ENABLED=true \
   -e N8N_RUNNERS_MODE=internal \
-  -e N8N_RUNNERS_TASK_REQUEST_TIMEOUT=120)
+  -e N8N_RUNNERS_TASK_REQUEST_TIMEOUT=120 \
+  -e N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true)
 
 # Add PostgreSQL env if DB_HOST is provided
 if [ -n "${DB_HOST}" ]; then

@@ -32,6 +32,7 @@ docker run -d --restart unless-stopped --name n8n -p 5678:5678 \
   -e N8N_RUNNERS_ENABLED=true \
   -e N8N_RUNNERS_MODE=internal \
   -e N8N_RUNNERS_TASK_REQUEST_TIMEOUT=120 \
+  -e N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true \
   -v /var/n8n:/home/node/.n8n \
   n8nio/n8n:latest
 

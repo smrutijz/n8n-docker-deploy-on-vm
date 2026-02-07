@@ -132,6 +132,7 @@ sudo docker run -d \
   -e N8N_RUNNERS_ENABLED=true \
   -e N8N_RUNNERS_MODE=internal \
   -e N8N_RUNNERS_TASK_REQUEST_TIMEOUT=120 \
+  -e N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true \
   n8nio/n8n:latest
 ```
 
@@ -147,6 +148,7 @@ sudo docker run -d \
   -e N8N_RUNNERS_ENABLED=true \
   -e N8N_RUNNERS_MODE=internal \
   -e N8N_RUNNERS_TASK_REQUEST_TIMEOUT=120 \
+  -e N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true \
   -e DB_TYPE=postgresdb \
   -e DB_POSTGRESDB_HOST=<DB_HOST> \
   -e DB_POSTGRESDB_PORT=<DB_PORT> \
